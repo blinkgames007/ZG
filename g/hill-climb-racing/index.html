@@ -1,408 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Hill Climb Racing - Play Online For Free! | Zipy Games by Microbuzz Tech</title>
-  <meta name="description" content="Hill Climb Racing Lite, is based on the wildly popular 2D physics-based mobile racing game Hill Climb Racing, that turned driving uphill into a full-blown obsession for millions worldwide. Think non-realistic physics meets coin-collecting chaos on impossible terrain featuring steep hills, deadly valleys, and treacherous jumps. Only funnier, more unpredictable, and way harder to put down.">
-  <meta name="keywords" content="Hill Climb Racing, Hill Climb Racing online, 
-  Hill Climb Racing game online, Hill Climb Racing download, HTML5 game, browser game, Zipy Games by Microbuzz Tech, online racing game, free games">
+  <title>Hill Climb Racing Lite – Play Online For Free! | Zipy Games</title>
+  <meta name="description" content="Hill Climb Racing Lite, is based on the wildly popular 2D physics-based mobile racing game Hill Climb Racing, that turned driving uphill into a full-blown obsession for millions worldwide. Think non-realistic physics meets coin-collecting chaos on impossible terrain featuring steep hills, deadly valleys, and treacherous jumps. Only funnier, more unpredictable, and way harder to put down."/>
+  <meta name="keywords" content="Hill Climb Racing Lite, Hill Climb Racing Lite unblocked, Hill Climb Racing Lite online, Hill Climb Racing, Best Online Platform Game, Zipy Games by Microbuzz Tech, online games, free games">
   <meta name="author" content="Zipy Games by Microbuzz Tech">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">  
 
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="../../style.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
 
-<!-- Schema.org structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoGame",
-  "name": "Hill Climb Racing",
-  "author": { "@type": "Organization", "name": "Zipy Games by Microbuzz Tech" },
-  "genre": "Platformer",
-  "operatingSystem": "Web Browser",
-  "applicationCategory": "Game",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.2", "ratingCount": "1500" },
-  "url": "../../G/hill-climb-racing/"
-}
-</script>
-
-<style>
-/* --- Base Styles --- */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #43206f, #1c0936);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  color: #fff;
-  transition: background 0.4s, color 0.4s;
-}
-[data-animate] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-[data-animate].visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-header, footer { width: 100%; flex-shrink: 0; }
-main {
-  flex: 1;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 30px 20px 50px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 2;
-}
-/* --- Banner --- */
-.banner-full {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 0 0 25px 25px;
-  margin-bottom: -120px;
-  z-index: 1;
-}
-.banner-full img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(5px) brightness(0.8);
-  transform: scale(1.1);
-}
-/* --- Game Header --- */
-.game-header {
-  background-color: rgba(27, 11, 59, 0.95);
-  border-radius: 20px;
-  padding: 25px 30px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  margin-bottom: 30px;
-  margin-top: 150px;
-}
-.game-info {
-  display: flex; align-items: center; gap: 20px; flex: 1;
-}
-.game-icon {
-  width: 110px; height: 110px; border-radius: 18px; overflow: hidden; flex-shrink: 0;
-}
-.game-icon img { width: 100%; height: 100%; object-fit: cover; }
-.game-text h1 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
-  margin: 0;
-  color: #fff;
-}
-.developer { font-size: 14px; color: #ccc; margin-top: 8px; }
-.stats { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 10px; font-size: 13px; color: #bbb; }
-.play-btn {
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
-  color: #fff; border: none; border-radius: 12px; padding: 14px 28px;
-  font-weight: 600; font-size: 16px; text-decoration: none;
-  transition: all 0.3s ease;
-}
-.play-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,75,43,0.6); }
-/* --- Floating Play Button --- */
-.floating-play {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: linear-gradient(45deg, #ff416c, #ff4b2b);
-  border-radius: 50%;
-  width: 65px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 20px rgba(255,75,43,0.6);
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-.floating-play:hover { transform: scale(1.1); }
-/* --- Ads --- */
-/*#banner1, #banner2 {
-  width: 100%;
-  max-width: 468px;
-  min-height: 90px;
-  margin: 30px auto;
-  text-align: center;
-}*/
-.ad-slot {
-  width: 100%;
-  min-width: 320px;   /* ✅ critical */
-  min-height: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto;
-}
-/* --- Screenshots --- */
-.screenshots {
-  display: flex; gap: 15px;
-  overflow-x: auto; padding: 15px 0;
-  scroll-behavior: smooth;
-  scrollbar-width: none; -ms-overflow-style: none;
-}
-.screenshots::-webkit-scrollbar { display: none; }
-.screenshots img {
-  height: 220px; border-radius: 15px; object-fit: cover;
-  flex-shrink: 0; cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-.screenshots img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255,255,255,0.4);
-}
-.swipe-hint {
-  text-align: center; font-size: 13px; color: #bbb; margin-top: 8px;
-}
-/* --- Lightbox --- */
-.lightbox {
-  margin-top: 70px;
-  display: none; position: fixed; z-index: 999;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  justify-content: center; align-items: center;
-  backdrop-filter: blur(10px);
-}
-.lightbox-img {
-  max-width: 90%; max-height: 85%;
-  border-radius: 20px; box-shadow: 0 0 25px rgba(255,255,255,0.2);
-}
-.lightbox .close {
-  position: absolute; top: 25px; right: 40px;
-  font-size: 40px; color: #fff; cursor: pointer; font-weight: bold;
-  transition: transform 0.2s ease;
-}
-.lightbox .close:hover { transform: scale(1.2); }
-/* --- Description --- */
-.description {
-  margin-top: 30px; line-height: 1.6; font-size: 16px; color: #ddd;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 25px; border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-.description h2 {
-  margin-top: 0; font-family: 'Press Start 2P', cursive;
-  font-size: 18px; margin-bottom: 15px; color: #fff;
-}
-.features { margin-top: 20px; padding-left: 20px; }
-.features li { margin-bottom: 10px; }
-
-/* ===========================
-   🎮 Related Games (Blink Games Style)
-   =========================== */
-
-.related-games {
-  margin-top: 60px;
-  padding: 20px;
-  text-align: center;
-}
-
-.related-games h2 {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1.4rem;
-  color: var(--primary, #00ffcc);
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-}
-
-/* 🔹 Game Grid Layout */
-.related-games .game-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 25px;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* 🔹 Game Card Style */
-.related-games .game-grid a {
-  display: block;
-  text-decoration: none;
-  background: var(--bg-card, #171717);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-.related-games .game-grid a img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 18px;
-  transition: transform 0.3s ease;
-}
-
-/* Game title text */
-.related-games .game-grid a span {
-  display: block;
-  padding: 10px 6px 14px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #f5f5f5;
-  text-align: center;
-  text-transform: capitalize;
-  transition: color 0.3s ease;
-}
-
-/* 🔹 Hover Effects */
-.related-games .game-grid a:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
-}
-
-.related-games .game-grid a:hover img {
-  transform: scale(1.07);
-}
-
-.related-games .game-grid a:hover span {
-  color: var(--primary, #00ffcc);
-}
-
-/* 🔹 Mobile Responsive */
-@media (max-width: 768px) {
-  .related-games h2 {
-    font-size: 1.1rem;
-  }
-
-  .related-games .game-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 15px;
-  }
-
-  .related-games .game-grid a span {
-    font-size: 0.85rem;
-  }
-}
-
-</style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="gstyle.css">
 </head>
 
 <body>
-<div id="header-container"></div>
 
-<!-- Floating Play Button -->
-<a href="#" class="floating-play">▶</a>
-
-<!-- Banner -->
-<!-- <div class="banner-full">
-  <img src="" alt="Banner Background" loading="lazy">
-</div> -->
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="logo">
+    <img src="../../assets/logo.png" alt="Zipy Logo" class="logo-img">
+    <span class="logo-text">Zipy Games</span>
+  </div>
+</header>
 
 <main>
-  <div class="game-header" data-animate>
-    <div class="game-info">
-      <div class="game-icon"><img src="" alt="Icon" loading="lazy"></div>
-      <div class="game-text">
-        <h1></h1>
-        <div class="developer"></div>
-        <div class="stats"></div>
+
+<!-- ================= GAME INFO ================= -->
+<section class="section">
+  <div class="game-info-card">
+
+    <div class="game-left">
+      <img src="favicon.ico" class="game-icon" alt="Hill Climb Racing Lite Game Icon">
+      <div>
+        <h1 class="game-title">Hill Climb Racing Lite</h1>
+        <p class="game-subtitle">A physics-based hill climbing driving game with vehicles and upgrades</p>
+
+        <div class="game-tags">
+          <span>Driving</span>
+          <span>Physics</span>
+          <span>Single Player</span>
+        </div>
       </div>
     </div>
-    <a href="#" class="play-btn">▶ Play Now</a>
-  </div>
 
-  <!-- <div id="banner1"></div> -->
-  <div class="ad-slot">
-    <div id="banner1"></div>
-  </div>
+    <a href="page.html" class="play-btn">▶ Play Now</a>
 
-  <!-- Screenshots -->
-  <div class="screenshots" data-animate></div>
-  <div class="swipe-hint">👉 Swipe to explore screenshots</div>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="Screenshot Preview">
   </div>
+</section>
 
-  <!-- Description -->
-  <div class="description" data-animate>
-    <h2>About this game</h2>
-    <p></p>
-    <ul class="features"></ul>
+<!-- ================= SCREENSHOTS ================= -->
+<section class="section">
+  <h2>Screenshots</h2>
+  <div class="screenshots">
+    <img src="sl/banner.jpg">
+    <!-- <img src="sl/snap1.png">
+    <img src="sl/snap2.jpg">
+    <img src="sl/snap3.jpg">
+    <img src="sl/snap4.jpg">
+    <img src="sl/snap5.png"> -->
   </div>
+</section>
 
-  <!-- <div id="banner2"></div> -->
-  <div class="ad-slot">
-    <div id="banner2"></div>
-  </div>
+<!-- ================= DESCRIPTION ================= -->
+<section class="section">
+  <div class="description-box">
+    <h1>Hill Climb Racing Lite</h1>
+    <p>
+      Hill Climb Racing Lite is a lightweight HTML5 version of the wildly popular 2D physics-based mobile game <strong>Hill Climb Racing</strong>. 
+      Drive uphill across impossible terrain featuring steep hills, deadly valleys, and treacherous jumps. 
+      The game combines non-realistic physics with coin-collecting chaos, creating an addictive challenge for millions of players worldwide.
+    </p>
 
-  <!-- Related Games -->
-  <div class="related-games" data-animate>
-    <h2>More Games by Blink</h2>
-    <div class="game-grid"></div>
-  </div>
+    <p>
+      Developed by <strong>Fingersoft</strong>, this Lite version offers faster loading, fewer lags, and cross-device support, 
+      making it perfect for quick sessions on desktop or mobile devices. With portrait mode on mobile and smooth gameplay, hill climbing has never been easier.
+    </p>
 
-  <!-- <div id="banner3"></div> -->
-  <div class="ad-slot">
-    <div id="banner3"></div>
+    <br>
+
+    <h2>New Update: World Tour Levels</h2>
+    <p>
+      The World Tour mode introduces a series of hand-crafted levels, each with unique finish lines and challenges. 
+      Pick vehicles, climb stages, and unlock new worlds while enjoying Cartapult — a feature that lets you launch back into the run from crashes without starting over.
+    </p>
+
+    <ul class="game-text-list">
+      <li>Worlds include: Countryside, Seasons, Moon, Super Countryside, Neon</li>
+      <li>Cartapult allows you to continue momentum after crashes</li>
+    </ul>
+
+    <br>
+
+    <h2>Gameplay & Controls</h2>
+    <p>The controls are simple yet essential for mastering physics-based driving:</p>
+    <ul class="game-text-list">
+      <li><strong>Desktop:</strong> Press D / right arrow to accelerate, A / left arrow to brake</li>
+      <li><strong>Mobile:</strong> Tap right side to accelerate, left side to brake</li>
+    </ul>
+
+    <p>When airborne, these controls also rotate your vehicle forward or backward, allowing you to control landings and survive longer.</p>
+
+    <br>
+
+    <h2>Gameplay: Obstacles & Challenges</h2>
+    <p>
+      Drive as far as possible while collecting coins, avoiding fuel depletion, and keeping Bill Newton safe. 
+      Terrain includes brutal hills, valleys, jumps, mud, ice, bridges, and massive gaps. 
+      Landing wrong or mismanaging momentum can flip your vehicle and end your run.
+    </p>
+
+    <ul class="game-text-list">
+      <li>Fuel canisters and batteries help survival</li>
+      <li>Impossible jumps require precise landing angles</li>
+      <li>Downhill stretches test control at high speed</li>
+      <li>Each crash teaches physics, momentum, and rotation</li>
+    </ul>
+
+    <br>
+
+    <h2>Vehicles & Upgrades</h2>
+    <p>Start with a Jeep and unlock vehicles such as:</p>
+    <ul class="game-text-list">
+      <li>Monster Truck – crush obstacles</li>
+      <li>Motocross Bike – agile maneuvers</li>
+      <li>Tank – unstoppable power</li>
+      <li>Moon Lander – lunar terrain</li>
+      <li>Santa's Sleigh – festive hill climbing</li>
+    </ul>
+
+    <p>Upgrade through the Garage system:</p>
+    <ul class="game-text-list">
+      <li>Engine upgrades – more power and acceleration</li>
+      <li>Suspension improvements – smoother landings</li>
+      <li>Tire upgrades – better grip on difficult terrain</li>
+      <li>4WD systems – conquer steeper inclines</li>
+    </ul>
+
+    <br>
+
+    <h2>Earning Extra Coins</h2>
+    <ul class="game-text-list">
+      <li>Air Time – longer jumps earn more coins</li>
+      <li>Back Flip / Front Flip – perform clean flips for bonus coins</li>
+      <li>Neck Flip – rare landing on back for extra coins (ends run)</li>
+    </ul>
+
+    <br>
+
+    <h2>Two Ways to Lose</h2>
+    <ul class="game-text-list">
+      <li>Run out of fuel – miss too many canisters or drive aggressively</li>
+      <li>Break Bill Newton's neck – crash or land incorrectly</li>
+    </ul>
+
+    <p>Both result in instant respawn at the current stage, allowing you to try again with lessons learned.</p>
+
+    <br>
+
+    <h2>Who Created Hill Climb Racing?</h2>
+    <p>
+      Finnish programmer <strong>Toni Fingerroos</strong> developed Hill Climb Racing solo in 2012 under the Fingersoft studio. 
+      It became a global phenomenon, amassing millions of downloads and establishing Fingersoft as a major indie success story.
+    </p>
+
+    <br>
+
+    <h2>Similar Games Like Hill Climb Racing</h2>
+    <p>
+      If you love physics-based driving, check out these games on Zipy:
+    </p>
+    <ul class="game-text-list">
+      <li>Moto X3M – high-octane motorcycle stunts</li>
+      <li>Gravity Driver – gravity-defying vehicle challenges</li>
+      <li>Stickman Dismounting – crash physics fun</li>
+      <li>Earn-to-Die – post-apocalyptic vehicle mayhem</li>
+    </ul>
   </div>
+</section>
+
+<!-- ================= RELATED GAMES ================= -->
+<!-- <section class="section">
+  <h2>Related Games</h2>
+
+  <div class="related-games-grid">
+
+    <a href="#" class="game-link">
+      <div class="game-card">
+        <img src="icon.png" alt="Level Devil">
+        <h3>Level Devil</h3>
+      </div>
+    </a>
+
+    <a href="#" class="game-link">
+      <div class="game-card">
+        <img src="icon.png" alt="Trap Game">
+        <h3>Trap Game</h3>
+      </div>
+    </a>
+
+    <a href="#" class="game-link">
+      <div class="game-card">
+        <img src="icon.png" alt="Jump King">
+        <h3>Jump King</h3>
+      </div>
+    </a>
+
+    <a href="#" class="game-link">
+      <div class="game-card">
+        <img src="icon.png" alt="Pixel Run">
+        <h3>Pixel Run</h3>
+      </div>
+    </a>
+
+    <a href="#" class="game-link">
+      <div class="game-card">
+        <img src="icon.png" alt="Spike World">
+        <h3>Spike World</h3>
+      </div>
+    </a>
+
+    <a href="#" class="game-link">
+      <div class="game-card">
+        <img src="icon.png" alt="Hard Floor">
+        <h3>Hard Floor</h3>
+      </div>
+    </a>
+
+  </div>
+</section> -->
+
+
 </main>
 
-<div id="footer-container"></div>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <p>© 2025 Zipy. All rights reserved.</p>
+</footer>
 
-<!-- Scripts -->
-<script src="../../layout.js"></script>
-<script src="../../config.js"></script>
-<script src="game-setup.js"></script>
-<script src="../../GoogleAdsManager.js"></script>
-
-<script>
-// --- Lightbox ---
-document.addEventListener("click", e => {
-  if (e.target.matches(".screenshots img")) {
-    const lightbox = document.getElementById("lightbox");
-    document.querySelector(".lightbox-img").src = e.target.src;
-    lightbox.style.display = "flex";
-  } else if (e.target.matches(".lightbox, .lightbox .close")) {
-    document.getElementById("lightbox").style.display = "none";
-  }
-});
-
-// --- Animation on scroll ---
-const elements = document.querySelectorAll('[data-animate]');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
-elements.forEach(el => observer.observe(el));
-</script>
-
-<!-- PWA placeholders -->
-<link rel="manifest" href="manifest.json">
-<script>
-  // --- Ads ---
-    window.onload = () => {
-      const ads = new GoogleAdsManager("ca-pub-9301267932926503");
-      ads.loadAutoAds();
-      ads.loadAdUnit("banner1", "3089669868", "auto");
-      ads.loadAdUnit("banner2", "3089669868", "auto");
-      ads.loadAdUnit("banner3", "3089669868", "auto");
-    };
-</script>
 </body>
 </html>
